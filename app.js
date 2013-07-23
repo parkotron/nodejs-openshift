@@ -12,7 +12,11 @@ app.configure(function () {
 });
 
 app.get('/', function (req, res, next) {
-  res.render('index', { title: 'A test app', node_version: process.version });
+  res.render('index', { 
+  	title: 'A test app', 
+  	score: _.once(function(){ return "hello world"; }),
+  	node_version: process.version 
+  });
 });
 
 app.listen(port, ip);
