@@ -1,9 +1,8 @@
-#!/usr/bin/env node
-var
-  express = require('express'),
-  port = process.argv[2] || 8080,
-  ip = process.argv[3] || '127.0.0.1',
-  app = express();
+
+var express = require('express'),
+    port = process.argv[2] || 8080,
+    ip = process.argv[3] || '127.0.0.1',
+    app = express();
 
 app.configure(function () {
   app.set('views', __dirname + '/views');
@@ -14,7 +13,7 @@ app.configure(function () {
 app.get('/', function (req, res, next) {
   res.render('index', { 
   	title: 'A test app', 
-  	score: 'hello world',
+  	score: process.argv.join(", "),
   	node_version: process.version 
   });
 });
