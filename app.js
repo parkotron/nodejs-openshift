@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 var express = require('express'),
     port = process.argv[2] || 8080,
